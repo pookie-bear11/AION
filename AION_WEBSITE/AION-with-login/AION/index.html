@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AION — Gamified Productivity RPG">
+  <title>AION — Your Journey Has No End</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/quests.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <section id="loginScreen" class="login-screen">
+    <div class="login-particles"></div>
+    <div class="login-portal">
+      <div class="login-ring login-ring-1"></div>
+      <div class="login-ring login-ring-2"></div>
+      <div class="login-ring login-ring-3"></div>
+      <img src="assets/images/image6.png" alt="" aria-hidden="true">
+    </div>
+
+    <div class="login-card">
+      <div class="login-brand"><span>✦</span> AION</div>
+      <div class="login-kicker">THE REALM AWAITS</div>
+      <h1>WELCOME, <span>ADVENTURER.</span></h1>
+      <p class="login-subtitle">Sign in to continue your journey.</p>
+
+      <form id="loginForm" class="login-form">
+        <label>
+          Username
+          <input id="loginUsername" type="text" autocomplete="username"
+                 placeholder="Enter your username" minlength="2" maxlength="18" required>
+        </label>
+
+        <label>
+          Password
+          <input id="loginPassword" type="password" autocomplete="current-password"
+                 placeholder="Enter your password" minlength="4" required>
+        </label>
+
+        <div class="login-options">
+          <label class="remember-option">
+            <input id="rememberMe" type="checkbox" checked>
+            <span>Remember me</span>
+          </label>
+          <span>FRONTEND DEMO</span>
+        </div>
+
+        <button class="rpg-button login-button" type="submit">
+          ENTER AION <span>→</span>
+        </button>
+      </form>
+
+      <div class="login-divider"><span>✦</span></div>
+      <small class="login-note">Your progress is saved locally in this browser.</small>
+    </div>
+
+    <div class="login-decoration login-decoration-left">✦</div>
+    <div class="login-decoration login-decoration-right">✦</div>
+  </section>
+
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loading-ring"></div>
+    <div class="loading-title">AION</div>
+    <small>YOUR JOURNEY HAS NO END</small>
+  </div>
+
+  <div class="ambient ambient-purple"></div>
+  <div class="ambient ambient-gold"></div>
+  <div class="stars"></div>
+
+  <header class="site-header">
+    <a class="logo" href="#/dashboard"><span>✦</span>AION</a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <nav id="mainNav">
+      <a href="#/dashboard" data-route="dashboard">Dashboard</a>
+      <a href="#/quests" data-route="quests">Quests</a>
+      <a href="#/inventory" data-route="inventory">Inventory</a>
+      <a href="#/leaderboard" data-route="leaderboard">Ranking</a>
+      <a href="#/profile" data-route="profile">Profile</a>
+      <a href="#/stats" data-route="stats">Stats</a>
+      <a href="#/settings" data-route="settings">Settings</a>
+      <button class="logout-button" id="logoutButton" type="button">LOG OUT</button>
+    </nav>
+    <div class="header-player">
+      <span id="headerName">PLAYER</span>
+      <b id="headerLevel">LV 1</b>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- DASHBOARD -->
+    <section class="view dashboard-view" data-view="dashboard">
+      <div class="hero-copy">
+        <div class="rune-label">AION · GAMIFIED PRODUCTIVITY</div>
+        <h1>YOUR JOURNEY<br><span>HAS NO END.</span></h1>
+        <p>Turn everyday goals into quests. Earn XP. Level up. Build your legend.</p>
+        <div class="hero-actions">
+          <a href="#/quests" class="rpg-button">ENTER QUEST BOARD <span>→</span></a>
+          <button class="ghost-button" id="dailyRewardButton">✦ CLAIM DAILY DROP</button>
+        </div>
+      </div>
+
+      <div class="portal-visual">
+        <div class="portal-back"></div>
+        <img src="assets/images/image6.png" alt="AION purple portal">
+        <div class="portal-glow"></div>
+      </div>
+
+      <div class="dashboard-panel-wrap">
+        <article class="rpg-panel player-panel">
+          <div class="panel-title"><span>PLAYER STATUS</span><small>SEASON 04</small></div>
+          <div class="player-line">
+            <div class="avatar-orb" id="dashboardAvatar">P</div>
+            <div><strong id="dashboardPlayer">PLAYER</strong><small>ADVENTURER · LEVEL <b id="dashboardLevel">1</b></small></div>
+            <div class="level-number"><span>LV</span><b id="dashboardLevelBig">1</b></div>
+          </div>
+          <div class="xp-head"><span>EXPERIENCE</span><b><i id="dashboardXp">0</i> / 1000 XP</b></div>
+          <div class="xp-bar"><i id="dashboardXpBar"></i></div>
+          <div class="status-grid">
+            <div><span>STREAK</span><b id="dashboardStreak">0</b><small>DAYS</small></div>
+            <div><span>QUESTS</span><b id="dashboardQuestsDone">0</b><small>DONE</small></div>
+            <div><span>RANK</span><b id="dashboardRank">#—</b><small>SEASON</small></div>
+          </div>
+        </article>
+
+        <article class="rpg-panel active-quests-panel">
+          <div class="panel-title"><span>ACTIVE QUESTS</span><a href="#/quests">VIEW ALL →</a></div>
+          <div id="dashboardQuestList"></div>
+        </article>
+
+        <aside class="rpg-panel reward-panel">
+          <span class="mini-label">NEXT REWARD</span>
+          <div class="reward-badge"><img src="assets/images/image38.png" alt=""></div>
+          <h3 id="dashboardReward">LEVEL 2</h3>
+          <p id="dashboardRewardText">280 XP remaining</p>
+          <div class="mini-progress"><i id="dashboardRewardBar"></i></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- QUESTS -->
+    <section class="view quests-view" data-view="quests">
+      <div class="page-banner">
+        <div><span class="rune-label">QUEST BOARD · YOUR MISSIONS</span><h2>CHOOSE YOUR <span>QUEST.</span></h2><p>Every completed mission becomes real progress.</p></div>
+        <button class="rpg-button small" id="createQuestButton">+ CREATE QUEST</button>
+      </div>
+      <div class="quest-toolbar">
+        <div id="questFilters"></div>
+        <input id="questSearch" type="search" placeholder="Search the quest board...">
+      </div>
+      <div id="questGrid" class="quest-grid"></div>
+      <div id="questEmpty" class="empty-panel hidden"><strong>THE BOARD IS SILENT.</strong><span>No quests match your search.</span></div>
+    </section>
+
+    <!-- INVENTORY -->
+    <section class="view" data-view="inventory">
+      <div class="page-banner">
+        <div><span class="rune-label">PLAYER COLLECTION</span><h2>YOUR <span>INVENTORY.</span></h2><p>Badges and collectibles earned along the journey.</p></div>
+      </div>
+      <div class="collection-stats">
+        <div><b id="inventoryBadges">0</b><span>BADGES</span></div>
+        <div><b id="inventoryItems">0</b><span>ITEMS</span></div>
+        <div><b id="inventoryPercent">0%</b><span>COLLECTION</span></div>
+      </div>
+      <div class="section-heading"><h3>BADGES</h3><span>ACHIEVEMENTS</span></div>
+      <div id="badgeGrid" class="collection-grid"></div>
+      <div class="section-heading"><h3>COLLECTIBLES</h3><span>REWARDS</span></div>
+      <div id="itemGrid" class="collection-grid"></div>
+    </section>
+
+    <!-- LEADERBOARD -->
+    <section class="view" data-view="leaderboard">
+      <div class="page-banner">
+        <div><span class="rune-label">SEASON 04 · RANKED</span><h2>SEASON <span>RANKING.</span></h2><p>Complete quests. Earn XP. Rise through the realm.</p></div>
+      </div>
+      <div class="rank-layout">
+        <article class="rpg-panel leaderboard-panel">
+          <div class="panel-title"><span>TOP ADVENTURERS</span><small>XP BASED</small></div>
+          <div id="leaderboardList"></div>
+        </article>
+        <aside class="rpg-panel your-rank">
+          <span class="mini-label">YOUR POSITION</span>
+          <strong id="yourRank">#—</strong>
+          <p id="rankText">Start completing quests to climb the ranking.</p>
+          <hr>
+          <span class="mini-label">SEASON XP</span>
+          <b id="rankXp">0 XP</b>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section class="view" data-view="profile">
+      <div class="profile-banner rpg-panel">
+        <div class="profile-avatar" id="profileAvatar">P</div>
+        <div><span class="rune-label">PLAYER PROFILE</span><h2 id="profileName">PLAYER</h2><p id="profileTitle">ADVENTURER · LEVEL 1</p></div>
+        <div class="profile-xp"><b>LEVEL <span id="profileLevel">1</span></b><div class="xp-bar"><i id="profileXpBar"></i></div><small id="profileXpText">0 / 1000 XP</small></div>
+      </div>
+      <div class="profile-grid">
+        <article class="rpg-panel"><span class="mini-label">ABOUT THE HERO</span><h3>THE JOURNEY BEGINS.</h3><p id="profileBio">Complete quests and build your own progression story.</p></article>
+        <article class="rpg-panel"><span class="mini-label">PLAYER STATS</span><div id="profileStats" class="profile-stats"></div></article>
+        <article class="rpg-panel profile-wide"><div class="panel-title"><span>ACHIEVEMENTS</span><small>RECENT UNLOCKS</small></div><div id="profileAchievements" class="achievement-row"></div></article>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="view" data-view="stats">
+      <div class="page-banner"><div><span class="rune-label">PROGRESSION ANALYTICS</span><h2>PLAYER <span>STATS.</span></h2><p>See how your real-life progress is growing.</p></div></div>
+      <div class="stats-grid">
+        <article class="rpg-panel chart-panel"><div class="panel-title"><span>XP HISTORY</span><small>LAST 7 DAYS</small></div><div id="xpChart" class="xp-chart"></div></article>
+        <article class="rpg-panel stat-big"><span class="mini-label">COMPLETION RATE</span><div class="stat-circle"><b id="completionRate">0%</b></div><small>QUESTS COMPLETED</small></article>
+        <article class="rpg-panel stat-big"><span class="mini-label">BEST STREAK</span><b id="bestStreak" class="number-gold">0</b><small>DAYS</small></article>
+        <article class="rpg-panel stat-big"><span class="mini-label">TOTAL XP</span><b id="totalXp" class="number-gold">0</b><small>EARNED</small></article>
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="view" data-view="settings">
+      <div class="page-banner"><div><span class="rune-label">SYSTEM CONFIGURATION</span><h2>AION <span>SETTINGS.</span></h2><p>Customize your local adventure.</p></div></div>
+      <div class="settings-grid">
+        <form class="rpg-panel settings-form" id="settingsForm">
+          <span class="mini-label">PLAYER SETTINGS</span>
+          <label>Display Name<input id="settingsName" minlength="2" maxlength="18" required></label>
+          <label>Player Bio<textarea id="settingsBio" rows="4" maxlength="120"></textarea></label>
+          <label>Theme<select id="settingsTheme"><option value="purple">Purple / Gold</option><option value="violet">Violet / Neon</option></select></label>
+          <button class="rpg-button" type="submit">SAVE CHANGES</button>
+        </form>
+        <article class="rpg-panel danger-card"><span class="mini-label">LOCAL DATA</span><h3>RESET AION</h3><p>Erase the progress saved in this browser.</p><button class="danger-button" id="resetButton">RESET ALL PROGRESS</button></article>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box"><button class="modal-close" data-close>×</button><div id="modalContent"></div></div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
