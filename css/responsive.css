@@ -1,195 +1,136 @@
-@media(max-width:1100px) {
-    .portal-visual {
-        opacity: .45;
-        right: -7vw
-    }
-
-    .dashboard-panel-wrap {
-        grid-template-columns: 1fr 1fr
-    }
-
-    .reward-panel {
-        grid-column: 1/-1
-    }
-
-    .quest-grid {
-        grid-template-columns: repeat(3, 1fr)
-    }
-
-    .collection-grid {
-        grid-template-columns: repeat(4, 1fr)
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr 1fr
-    }
-
-    .chart-panel {
-        grid-column: 1/-1;
-        grid-row: auto
-    }
+/* AION — responsive behaviour
+   1180  tighten page grids
+   1000  orbit rail becomes a top bar with a drawer
+    920  landing navigation becomes a drawer
+    760  single-column app pages
+    640  phone */
+@media (max-width: 1180px) {
+  .dash-grid { grid-template-columns: 1fr; grid-template-areas: "queue" "side" "activity"; gap: 44px }
+  .rank-layout, .settings-grid { grid-template-columns: 1fr; gap: 40px }
+  .your-rank { position: static }
+  .dossier { grid-template-columns: 280px minmax(0, 1fr); gap: 32px }
+  .chart-panel, .rate-panel { grid-column: 1 / -1 }
+  .rate-panel { grid-template-columns: auto 1fr; justify-items: start; align-items: center; column-gap: 32px; text-align: left }
+  .rate-panel .mini-label { grid-column: 1 / -1 }
+  .feature-grid { grid-template-columns: repeat(2, 1fr); gap: 0 40px }
+  .how-grid { gap: 40px }
 }
 
-@media(max-width:800px) {
-    .site-header {
-        padding: 0 5vw
-    }
-
-    .logo {
-        margin-right: auto
-    }
-
-    .menu-toggle {
-        display: block
-    }
-
-    .site-header nav {
-        display: none;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 70px;
-        height: auto;
-        background: #0a090d;
-        border-bottom: 1px solid var(--line);
-        padding: 10px 5vw;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0
-    }
-
-    .site-header nav.open {
-        display: flex
-    }
-
-    .site-header nav a {
-        height: auto;
-        padding: 12px 0;
-        border: 0
-    }
-
-    .header-player {
-        display: none
-    }
-
-    .view {
-        padding-left: 5vw;
-        padding-right: 5vw
-    }
-
-    .portal-visual {
-        position: absolute;
-        top: 90px;
-        right: -180px;
-        width: 600px;
-        height: 600px;
-        opacity: .18
-    }
-
-    .hero-copy {
-        padding: 0
-    }
-
-    .dashboard-panel-wrap {
-        grid-template-columns: 1fr
-    }
-
-    .reward-panel {
-        grid-column: auto
-    }
-
-    .quest-grid {
-        grid-template-columns: 1fr 1fr
-    }
-
-    .rank-layout,
-    .settings-grid {
-        grid-template-columns: 1fr
-    }
-
-    .profile-banner {
-        grid-template-columns: 75px 1fr
-    }
-
-    .profile-xp {
-        grid-column: 1/-1
-    }
-
-    .profile-grid {
-        grid-template-columns: 1fr
-    }
-
-    .profile-wide {
-        grid-column: auto
-    }
-
-    .page-banner {
-        align-items: start;
-        flex-direction: column
-    }
+/* ----- application: rail -> top bar ----- */
+@media (max-width: 1000px) {
+  .site-header { position: sticky; top: 0; inset: auto; width: 100%; height: var(--nav-h); flex-direction: row; align-items: center; gap: 14px; padding: 0 16px; overflow: visible; background: rgba(7,6,12,.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-right: 0; border-bottom: 1px solid var(--line-soft) }
+  .site-header::after { top: auto; bottom: -1px; left: 0; right: 0; width: auto; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), var(--uv), transparent) }
+  .site-header .brand { padding: 0 }
+  .header-player { margin-left: auto; grid-template-columns: auto auto; padding: 0; border: 0; background: none; column-gap: 10px }
+  .header-player .hp-xp { display: none }
+  .menu-toggle { display: inline-flex; margin-left: 0 }
+  .site-header nav { position: absolute; top: 100%; left: 0; right: 0; display: none; flex-direction: column; gap: 2px; padding: 10px 16px 18px; background: rgba(7,6,12,.98); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); box-shadow: var(--shadow-lg) }
+  .site-header nav.open { display: flex }
+  .site-header nav a { padding: 14px; font-size: 1rem }
+  .site-header nav a.active::before { left: 0 }
+  .logout-button { margin-top: 8px; padding: 16px 14px 8px }
+  #app { margin-left: 0; width: auto; max-width: none; padding: 28px 22px 80px }
 }
 
-@media(max-width:560px) {
-    .view {
-        padding-top: 45px
-    }
+@media (max-width: 920px) {
+  .nav-toggle { display: inline-flex }
+  .public-nav { position: absolute; top: var(--nav-h); left: 0; right: 0; display: none; flex-direction: column; align-items: stretch; gap: 4px; margin: 0; padding: 12px 20px 20px; background: rgba(7,6,12,.97); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); box-shadow: var(--shadow-lg) }
+  .public-nav.open { display: flex }
+  .public-nav a { padding: 14px 14px; font-size: 1rem }
+  .public-nav a.active::after { left: 14px; right: auto; width: 24px }
+  .public-nav a.nav-signin { margin: 8px 0 0; text-align: center }
+  .hero { min-height: 0 }
+  .hero-grid, .about-grid, .how-grid { grid-template-columns: 1fr }
+  .hero-grid { padding-block: 40px 72px }
+  .hero-portal { width: min(300px, 70%); order: -1 }
+  .hero::before { background: linear-gradient(180deg, rgba(7,6,12,.55) 0%, rgba(7,6,12,.78) 60%, var(--bg) 100%) }
+  .how-grid > div:first-child { position: static }
+}
 
-    .hero-copy h1 {
-        font-size: 43px
-    }
+@media (max-width: 860px) {
+  .deck-main { grid-template-columns: 1fr }
+  .level-ring { order: -1; justify-self: start; max-width: 220px }
+  .ring-core b { font-size: 4.2rem }
+  .dossier { grid-template-columns: 1fr }
+  .dossier-id { position: static; grid-template-columns: auto 1fr; justify-items: start; text-align: left; column-gap: 24px; padding: 28px }
+  .dossier-id .portrait { grid-row: 1 / span 3; width: 150px; height: 150px; margin: 0 }
+  .dossier-id .profile-avatar { width: 100px; height: 100px; font-size: 3rem }
+  .dossier-id .profile-xp { grid-column: 1 / -1; margin-top: 22px }
+  .dossier-id > p { margin-bottom: 0 }
+  .telemetry { grid-template-columns: repeat(2, 1fr) }
+  .telemetry .tele:nth-child(3) { border-left: 0; padding-left: 0 }
+  .telemetry .tele:nth-child(n+3) { border-top: 1px solid var(--line-soft) }
+  .leader-row { grid-template-columns: 44px 40px minmax(0, 1fr) minmax(96px, 150px); gap: 12px }
+}
 
-    .hero-actions {
-        flex-direction: column;
-        align-items: stretch
-    }
-
-    .rpg-button,
-    .ghost-button {
-        width: 100%
-    }
-
-    .dashboard-panel-wrap {
-        margin-top: 45px
-    }
-
-    .quest-grid,
-    .collection-grid,
-    .collection-stats,
-    .stats-grid {
-        grid-template-columns: 1fr
-    }
-
-    .quest-toolbar {
-        flex-direction: column;
-        align-items: stretch
-    }
-
-    .quest-toolbar input {
-        width: 100%
-    }
-
-    .page-banner h2 {
-        font-size: 38px
-    }
-
-    .leader-row {
-        grid-template-columns: 25px 35px 1fr auto
-    }
-
-    .profile-banner {
-        grid-template-columns: 1fr
-    }
-
-    .profile-avatar {
-        width: 65px;
-        height: 65px
-    }
-
-    .profile-banner h2 {
-        font-size: 29px
-    }
-
-    .xp-chart {
-        height: 230px
-    }
+@media (max-width: 640px) {
+  :root { --nav-h: 62px }
+  body { font-size: 15.5px }
+  .container { width: calc(100% - 32px) }
+  #app { padding: 22px 16px 72px }
+  .section { padding: 56px 0 }
+  .feature-grid { grid-template-columns: 1fr }
+  .hero-actions .btn { flex: 1 1 100% }
+  .embers i:nth-child(n+7) { display: none }
+  .header-player #headerName { display: none }
+  .page-banner { margin-bottom: 24px; padding-bottom: 20px }
+  .page-banner .btn { width: 100% }
+  .deck { padding: 24px 20px 0; margin-bottom: 40px }
+  .deck h1 { font-size: clamp(2.8rem, 15vw, 4rem) }
+  .deck .xp-block { margin-top: 28px }
+  .deck .hero-actions .btn { flex: 1 1 100% }
+  .level-ring { max-width: 168px }
+  .ring-core b { font-size: 3.4rem }
+  .tele { padding: 16px 0 16px 18px }
+  .tele b { font-size: 1.6rem }
+  .collection-stats .tele, .readouts .tele { padding: 16px 0 16px 14px }
+  .collection-stats .tele b, .readouts .tele b { font-size: 1.45rem }
+  .dash-quest { grid-template-columns: 40px minmax(0, 1fr) auto; gap: 12px }
+  .dash-quest .dash-complete { grid-column: 1 / -1 }
+  .quest-stats b { font-size: 1.4rem }
+  .about-stats dd { font-size: 2.3rem }
+  .about-stats div { padding: 20px 16px }
+  .steps li { padding: 14px 10px 14px 6px; gap: 14px }
+  .steps::before, .steps::after { left: 19px }
+  .quest-summary { gap: 18px 0 }
+  .summary-item { min-width: 0; padding-right: 20px; margin-right: 20px }
+  .summary-item b { font-size: 2rem }
+  .console { padding: 14px }
+  .quest-toolbar { flex-direction: column; align-items: stretch }
+  #questSearch { max-width: none }
+  .quest-actions label { flex: 1 1 100% }
+  .quest-actions .btn { width: 100% }
+  .quest-grid { grid-template-columns: 1fr }
+  .quest-card { padding: 22px 20px 20px 26px }
+  .quest-foot { flex-direction: column; align-items: stretch; gap: 12px }
+  .quest-reward { justify-content: center }
+  .modal-box { padding: 28px 20px }
+  .modal-form-row { grid-template-columns: 1fr }
+  .collection-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px }
+  .artifact-stage { height: 150px }
+  .artifact-stage img { width: 72px; height: 72px }
+  .artifact-info { padding: 4px 14px 16px }
+  .leader-row { grid-template-columns: 36px 36px minmax(0, 1fr); gap: 10px; padding-inline: 8px }
+  .leader-score { grid-column: 2 / -1; justify-items: stretch; grid-template-columns: auto 1fr; align-items: center; gap: 14px }
+  .leader-score .leader-xp { font-size: .88rem; white-space: nowrap }
+  .leader-row.top-1 .leader-icon { width: 40px; height: 40px; font-size: 1rem }
+  .leader-row.top-1 { padding-block: 22px }
+  .profile-stats { grid-template-columns: 1fr }
+  .dossier-id { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 28px 20px }
+  .dossier-id .portrait { grid-row: auto; width: 168px; height: 168px; margin-bottom: 20px }
+  .dossier-id .profile-avatar { width: 112px; height: 112px }
+  .dossier-id > p { margin-bottom: 22px }
+  .chart-wrap { height: 260px }
+  .xp-chart { gap: 6px; left: 40px }
+  .chart-avg { left: 40px }
+  .chart-empty { left: 40px }
+  .rate-panel { grid-template-columns: 1fr; justify-items: center; text-align: center }
+  .readouts { grid-template-columns: 1fr }
+  .readouts .tele { border-left: 0; padding-left: 0; border-top: 1px solid var(--line-soft) }
+  .readouts .tele:first-child { border-top: 0 }
+  .cfg-row { grid-template-columns: 1fr }
+  .signin-card { padding: 28px 20px }
+  .signin-section::before, .signin-section::after { width: 120vw; height: 120vw }
+  .footer-grid { flex-direction: column }
+  .reward-history article { flex-direction: column; gap: 2px }
 }

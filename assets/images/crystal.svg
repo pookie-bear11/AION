@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 192" width="160" height="192">
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9b8ff"/><stop offset="1" stop-color="#7b3fd1"/></linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b37cf2"/><stop offset="1" stop-color="#4a1f8f"/></linearGradient>
+    <linearGradient id="c" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8e55e0"/><stop offset="1" stop-color="#2f1260"/></linearGradient>
+    <linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3d48a"/><stop offset="1" stop-color="#b9833a"/></linearGradient>
+  </defs>
+  <path d="M80 8 118 46 104 150 80 184 56 150 42 46Z" fill="url(#b)" stroke="url(#r)" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M80 8 118 46 80 70 42 46Z" fill="url(#a)"/>
+  <path d="M42 46 80 70 56 150Z" fill="#9b63ea" opacity=".85"/>
+  <path d="M118 46 80 70 104 150Z" fill="url(#c)"/>
+  <path d="M80 70 56 150 80 184 104 150Z" fill="#6a31be" opacity=".9"/>
+  <path d="M60 36 76 24" stroke="#fff" stroke-opacity=".7" stroke-width="4" stroke-linecap="round"/>
+</svg>

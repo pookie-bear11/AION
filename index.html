@@ -1,255 +1,1119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AION — Gamified Productivity RPG">
-  <title>AION — Your Journey Has No End</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/dashboard.css">
-  <link rel="stylesheet" href="css/quests.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <meta name="description" content="AION - Artificial Intelligence and Online Network">
-  <meta name="keywords" content="AION, AION website, artificial intelligence">
-  <meta name="author" content="AION">
-  <meta name="robots" content="index, follow">
-
-  <meta property="og:title" content="AION">
-  <meta property="og:description" content="AION official website">
-  <meta property="og:type" content="website">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Turn everyday goals into quests with AION, a fantasy-inspired productivity RPG. Track your progress, earn XP, and build your legend."
+    />
+    <meta name="keywords" content="AION, AION website, fantasy productivity RPG, quests, XP, level progression" />
+    <meta name="author" content="AION" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#07060C" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AION — Your Journey Has No End" />
+    <meta
+      property="og:description"
+      content="Turn everyday goals into quests. Earn XP. Level up. Build your legend."
+    />
+    <meta
+      property="og:image"
+      content="https://pookie-bear11.github.io/AION/assets/images/hero-bg.webp"
+    />
+    <link rel="canonical" href="https://pookie-bear11.github.io/AION/" />
+    <link rel="icon" href="assets/icons/aion.svg" type="image/svg+xml" />
+    <title>AION — Your Journey Has No End</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/hero-bg.webp"
+      type="image/webp"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/landing.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/quests.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
   </head>
-<body>
+  <body class="login-active">
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
 
-  <!-- LOGIN SCREEN -->
-  <section id="loginScreen" class="login-screen">
-    <div class="login-particles"></div>
-    <div class="login-portal">
-      <div class="login-ring login-ring-1"></div>
-      <div class="login-ring login-ring-2"></div>
-      <div class="login-ring login-ring-3"></div>
-      <img src="assets/images/image6.png" alt="" aria-hidden="true">
+    <!-- ===================== PUBLIC LANDING PAGE ===================== -->
+    <div id="loginScreen" class="landing">
+      <header class="public-header" id="publicHeader">
+        <div class="container public-header-inner">
+          <a class="brand" href="#home" aria-label="AION home"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1.1 2.6"/><path d="M16 .8l2 2.6-2 2.6-2-2.6z" fill="currentColor"/><circle cx="16" cy="16" r="2" fill="currentColor"/></svg><span>AION</span></a>
+          <button
+            class="nav-toggle"
+            id="publicNavToggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="publicNav"
+          >
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+              <path
+                d="M4 7h16M4 12h16M4 17h16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+          <nav id="publicNav" class="public-nav" aria-label="Public navigation">
+            <a href="#home" data-spy="home">Home</a>
+            <a href="#about" data-spy="about">About</a>
+            <a href="#features" data-spy="features">Features</a>
+            <a href="#how" data-spy="how">How It Works</a>
+            <a href="#quests" data-spy="quests">Quests</a>
+            <a href="#rewards" data-spy="rewards">Rewards</a>
+            <a href="#faq" data-spy="faq">FAQ</a>
+            <a href="#signin" class="nav-signin" data-spy="signin">Sign In</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="mainContent" tabindex="-1">
+        <!-- A. HERO -->
+        <section id="home" class="hero" aria-labelledby="heroTitle">
+          <div class="hero-bg" aria-hidden="true"></div>
+          <div class="embers" aria-hidden="true">
+            <i style="--x:8%;--s:3px;--d:11s;--delay:-2s;--dx:40px"></i><i style="--x:16%;--s:2px;--d:14s;--delay:-7s;--dx:-30px"></i><i style="--x:24%;--s:4px;--d:12s;--delay:-4s;--dx:60px"></i><i style="--x:33%;--s:2px;--d:16s;--delay:-9s;--dx:-50px"></i><i style="--x:41%;--s:3px;--d:10s;--delay:-1s;--dx:30px"></i><i style="--x:52%;--s:2px;--d:15s;--delay:-6s;--dx:-20px"></i><i style="--x:61%;--s:4px;--d:13s;--delay:-11s;--dx:50px"></i><i style="--x:70%;--s:3px;--d:11s;--delay:-5s;--dx:-40px"></i><i style="--x:79%;--s:2px;--d:17s;--delay:-3s;--dx:35px"></i><i style="--x:88%;--s:3px;--d:12s;--delay:-8s;--dx:-55px"></i><i style="--x:95%;--s:2px;--d:14s;--delay:-10s;--dx:20px"></i>
+          </div>
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <span class="kicker">A fantasy-inspired productivity RPG</span>
+              <h1 id="heroTitle">
+                <span class="hero-title">AION</span
+                ><span class="hero-sub">Your journey has no end.</span>
+              </h1>
+              <p>
+                Turn everyday goals into quests. Earn XP, level up, and unlock
+                collectibles as you finish the real-world study, habit, and
+                project tasks you set for yourself.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-primary btn-lg" href="#signin"
+                  >Play Now</a
+                >
+                <a class="btn btn-light btn-lg" href="#features"
+                  >Explore Features</a
+                >
+              </div>
+              <p class="hero-note">
+                A personal, browser-saved experience. No online account or
+                service is connected.
+              </p>
+            </div>
+            <div class="hero-portal" aria-hidden="true">
+              <img
+                class="portal-sigil"
+                src="assets/images/sigil.webp"
+                alt=""
+                width="600"
+                height="600"
+                decoding="async"
+              />
+              <img
+                class="portal-ring"
+                src="assets/images/portal.webp"
+                alt=""
+                width="800"
+                height="800"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- B. ABOUT -->
+        <section id="about" class="section" aria-labelledby="aboutTitle">
+          <div class="container about-grid">
+            <div>
+              <h2 id="aboutTitle">Make progress feel like an adventure.</h2>
+              <p class="lead">
+                AION wraps your study, habits, and personal goals in a
+                lightweight RPG loop. You pick a quest, do the real-world task,
+                then record it to earn XP, build streaks, and unlock cosmetic
+                badges and collectibles.
+              </p>
+              <p>
+                It is an independent project, not affiliated with the AION game,
+                and it runs entirely in your browser. Your progress is a
+                motivation tool; AION cannot verify that a task was completed,
+                and XP and collectibles are fictional rather than real-world
+                prizes.
+              </p>
+            </div>
+            <dl
+              class="about-stats"
+              id="aboutStats"
+              aria-label="AION at a glance"
+            >
+              <div>
+                <dt>Ready-made quests</dt>
+                <dd data-fill="questCount">—</dd>
+              </div>
+              <div>
+                <dt>XP for level 1</dt>
+                <dd data-fill="xpPerLevel">—</dd>
+              </div>
+              <div>
+                <dt>Badges to earn</dt>
+                <dd data-fill="badgeCount">—</dd>
+              </div>
+              <div>
+                <dt>Collectibles</dt>
+                <dd data-fill="itemCount">—</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <!-- C. FEATURES -->
+        <section
+          id="features"
+          class="section section-alt"
+          aria-labelledby="featuresTitle"
+        >
+          <div class="container">
+            <div class="section-head">
+              <h2 id="featuresTitle">Everything in one dashboard.</h2>
+              <p class="lead">
+                These are the tools available today once you enter the demo.
+              </p>
+            </div>
+            <div class="feature-grid">
+              <article class="feature-card">
+                <span class="icon-tile"
+                  ><svg viewBox="0 0 64 64" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="4"
+                      d="M18 8h34v48H18c-7 0-7-10 0-10h28V8M18 46V18c0-7-7-7-7 0v28c0 7 7 10 7 10"
+                    /></svg
+                ></span>
+                <h3>Quest Board</h3>
+                <p>
+                  Browse ready-made missions across study, reading, programming,
+                  and more. Search, filter by category, difficulty, status and
+                  deadline, and sort the board.
+                </p>
+              </article>
+              <article class="feature-card">
+                <span class="icon-tile"
+                  ><svg viewBox="0 0 64 64" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="5"
+                      d="M45 7l12 12M39 13l12 12L20 56H8v-12zM15 43l10 10"
+                    /></svg
+                ></span>
+                <h3>Custom Quests</h3>
+                <p>
+                  Create, edit, and delete your own quests with a category,
+                  difficulty, time estimate, XP reward, and optional due date.
+                </p>
+              </article>
+              <article class="feature-card">
+                <span class="icon-tile"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4zM18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8z"
+                    /></svg
+                ></span>
+                <h3>Quest Generator</h3>
+                <p>
+                  Preview rule-based quest suggestions built from templates,
+                  then add only the ones you want. It does not use AI.
+                </p>
+              </article>
+              <article class="feature-card">
+                <span class="icon-tile"
+                  ><svg viewBox="0 0 64 64" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="4"
+                      d="M8 20l12-12h24l12 12-24 36zM8 20h48M20 8l12 48M44 8L32 56"
+                    /></svg
+                ></span>
+                <h3>XP &amp; Levels</h3>
+                <p>
+                  Every completed quest awards its listed XP exactly once. Watch
+                  your level and progress toward the next one on the dashboard.
+                </p>
+              </article>
+              <article class="feature-card">
+                <span class="icon-tile"
+                  ><svg viewBox="0 0 64 64" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="4"
+                      d="M7 17l12 12 13-20 13 20 12-12-7 34H14z"
+                    /></svg
+                ></span>
+                <h3>Badges &amp; Collectibles</h3>
+                <p>
+                  Unlock cosmetic badges and items from your inventory as you
+                  complete quests, keep streaks, and level up.
+                </p>
+              </article>
+              <article class="feature-card">
+                <span class="icon-tile"
+                  ><svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 20V10M10 20V4M16 20v-7M22 20H2"
+                    /></svg
+                ></span>
+                <h3>Stats, Ranking &amp; Profile</h3>
+                <p>
+                  Review your recent XP, completion rate, and streaks, compare
+                  yourself with illustrative demo rivals, and customize your
+                  profile.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- D. HOW IT WORKS -->
+        <section id="how" class="section" aria-labelledby="howTitle">
+          <div class="container how-grid">
+            <div>
+              <h2 id="howTitle">Small steps. Real momentum.</h2>
+              <p class="lead">
+                Choose a manageable task, complete it in real life, then record
+                it in AION. The app awards its listed XP once and updates your
+                browser-saved progress.
+              </p>
+              <a class="btn btn-primary" href="#signin"
+                >Start your adventure</a
+              >
+            </div>
+            <ol class="steps" id="steps">
+              <li>
+                <b aria-hidden="true">1</b>
+                <div>
+                  <h3>Enter with a display name</h3>
+                  <p>
+                    Pick a name to open your local adventure. No password or
+                    online account is required.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <b aria-hidden="true">2</b>
+                <div>
+                  <h3>Choose or create a quest</h3>
+                  <p>
+                    Pick one from the Quest Board, write your own, or generate
+                    suggestions from templates.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <b aria-hidden="true">3</b>
+                <div>
+                  <h3>Do the real-world task</h3>
+                  <p>
+                    AION helps you track your intentions; it cannot verify that
+                    you finished the task.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <b aria-hidden="true">4</b>
+                <div>
+                  <h3>Mark it complete</h3>
+                  <p>
+                    Earn the quest's XP, extend your streak, and see any badges
+                    or collectibles you unlock.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- E. QUESTS -->
+        <section
+          id="quests"
+          class="section section-alt"
+          aria-labelledby="questsTitle"
+        >
+          <div class="container">
+            <div class="section-head">
+              <h2 id="questsTitle">A board of ready-made missions.</h2>
+              <p class="lead">
+                A preview of the quests included in AION. Each one lists its
+                difficulty, estimated time, and XP. You can also create your own
+                once you are inside.
+              </p>
+            </div>
+            <div class="card-grid" id="questPreview" aria-live="polite"></div>
+            <div class="section-cta">
+              <a class="btn btn-primary" href="#signin"
+                >Sign in to open the Quest Board</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- F. REWARDS -->
+        <section id="rewards" class="section" aria-labelledby="rewardsTitle">
+          <div class="container">
+            <div class="section-head">
+              <h2 id="rewardsTitle">Earn XP. Unlock collectibles.</h2>
+              <p class="lead">
+                Rewards are cosmetic progress markers inside AION. They are not
+                real-world prizes or official AION game items.
+              </p>
+            </div>
+            <div class="rewards-grid">
+              <div class="card reward-rules">
+                <h3>How XP works</h3>
+                <ul class="check-list">
+                  <li>
+                    Completing a quest awards that quest's listed XP, once.
+                  </li>
+                  <li>
+                    Every <b data-fill="xpPerLevel">1,000</b> XP raises your
+                    level.
+                  </li>
+                  <li>
+                    The Daily Drop gives <b data-fill="dailyXp">50</b> XP once
+                    per day.
+                  </li>
+                  <li>
+                    Finishing at least one quest per day builds your streak.
+                  </li>
+                </ul>
+              </div>
+              <div class="reward-showcase">
+                <h3>Collectibles</h3>
+                <div class="mini-grid" id="itemPreview"></div>
+                <h3>Badges</h3>
+                <div class="mini-grid" id="badgePreview"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- G. FAQ -->
+        <section
+          id="faq"
+          class="section section-alt"
+          aria-labelledby="faqTitle"
+        >
+          <div class="container faq-wrap">
+            <div class="section-head">
+              <h2 id="faqTitle">Frequently asked questions.</h2>
+            </div>
+            <div class="faq-list">
+              <details>
+                <summary>Is this an official AION game service?</summary>
+                <p>
+                  No. AION here is an independent, fantasy-inspired productivity
+                  RPG and is not affiliated with the AION game.
+                </p>
+              </details>
+              <details>
+                <summary>Do I need an account or password?</summary>
+                <p>
+                  No. There is no real account system. You enter a display name
+                  to open the experience on this browser. Please do not enter
+                  real credentials or sensitive information.
+                </p>
+              </details>
+              <details>
+                <summary>Will my progress sync to another device?</summary>
+                <p>
+                  No. Progress is saved in this browser's local storage. It does
+                  not sync between devices, and clearing browser data (or using
+                  Reset in Settings) removes it.
+                </p>
+              </details>
+              <details>
+                <summary>How do quests and XP work?</summary>
+                <p>
+                  Each quest lists the XP it awards. Marking a quest complete
+                  grants that XP one time. Every 1,000 XP raises your level.
+                </p>
+              </details>
+              <details>
+                <summary>Can I create my own quests?</summary>
+                <p>
+                  Yes. You can create, edit, and delete custom quests, or use
+                  the generator to preview template-based suggestions and add
+                  the ones you like.
+                </p>
+              </details>
+              <details>
+                <summary>Does the quest generator use AI?</summary>
+                <p>
+                  No. It picks from a small set of built-in templates based on
+                  the category, difficulty, and time you choose.
+                </p>
+              </details>
+              <details>
+                <summary>What is the Daily Drop?</summary>
+                <p>
+                  A small XP bonus you can claim once per calendar day from your
+                  dashboard.
+                </p>
+              </details>
+              <details>
+                <summary>
+                  Are rewards real-world prizes? Can AION verify my tasks?
+                </summary>
+                <p>
+                  No to both. XP, badges, and collectibles are fictional and
+                  cosmetic, and AION cannot check whether you actually completed
+                  a task. It is a motivation tool.
+                </p>
+              </details>
+              <details>
+                <summary>Is the leaderboard made of real players?</summary>
+                <p>
+                  No. The ranking compares you with illustrative demo rivals so
+                  you can see how your XP stacks up.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <!-- SIGN IN (existing local demo gate, preserved) -->
+        <section
+          id="signin"
+          class="section signin-section"
+          aria-labelledby="signinTitle"
+        >
+          <div class="container">
+            <div class="signin-card card">
+              <div class="brand"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1.1 2.6"/><path d="M16 .8l2 2.6-2 2.6-2-2.6z" fill="currentColor"/><circle cx="16" cy="16" r="2" fill="currentColor"/></svg><span>AION</span></div>
+              <span class="eyebrow">Local browser demo</span>
+              <h2 id="signinTitle">Enter the realm.</h2>
+              <p class="signin-lede" id="loginHelp">Choose a display name to open your adventure on this browser.</p>
+              <form id="loginForm" class="form" novalidate>
+                <div class="field">
+                  <label for="loginUsername">Display name</label>
+                  <input
+                    id="loginUsername"
+                    name="username"
+                    type="text"
+                    autocomplete="username"
+                    placeholder="2–18 characters"
+                    minlength="2"
+                    maxlength="18"
+                    required
+                    aria-describedby="loginHelp loginError"
+                  />
+                  <p
+                    id="loginError"
+                    class="field-error"
+                    role="alert"
+                    hidden
+                  ></p>
+                </div>
+                <label class="check"
+                  ><input id="rememberMe" type="checkbox" checked /><span
+                    >Remember this browser</span
+                  ></label
+                >
+                <button
+                  id="loginSubmit"
+                  class="btn btn-primary btn-block"
+                  type="submit"
+                >
+                  <span class="btn-label">Enter the Realm</span>
+                </button>
+              </form>
+              <p class="signin-note">
+                No real account is created and no data is sent anywhere.
+                Progress stays in this browser.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- H. FOOTER -->
+      <footer class="public-footer">
+        <div class="container footer-grid">
+          <div>
+            <a class="brand" href="#home" aria-label="AION home"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1.1 2.6"/><path d="M16 .8l2 2.6-2 2.6-2-2.6z" fill="currentColor"/><circle cx="16" cy="16" r="2" fill="currentColor"/></svg><span>AION</span></a>
+            <p class="muted">
+              A fantasy-inspired productivity RPG. Independent project, not
+              affiliated with the AION game.
+            </p>
+          </div>
+          <nav aria-label="Footer navigation" class="footer-nav">
+            <a href="#about">About</a><a href="#features">Features</a
+            ><a href="#how">How It Works</a> <a href="#quests">Quests</a
+            ><a href="#rewards">Rewards</a><a href="#faq">FAQ</a
+            ><a href="#signin">Sign In</a>
+          </nav>
+        </div>
+        <div class="container footer-bottom">
+          <span
+            >Progress stays in this browser · XP and collectibles are
+            fictional</span
+          >
+        </div>
+      </footer>
     </div>
 
-    <div class="login-card">
-      <div class="login-brand"><span>✦</span> AION</div>
-      <div class="login-kicker">THE REALM AWAITS</div>
-      <h1>WELCOME, <span>ADVENTURER.</span></h1>
-      <p class="login-subtitle">Sign in to continue your journey.</p>
+    <div id="loadingScreen" class="loading-screen" role="status">
+      <div class="loading-ring" aria-hidden="true"></div>
+      <div class="loading-title">AION</div>
+      <small>Your journey has no end.</small>
+    </div>
 
-      <form id="loginForm" class="login-form">
-        <label>
-          Username
-          <input id="loginUsername" type="text" autocomplete="username"
-                 placeholder="Enter your username" minlength="2" maxlength="18" required>
-        </label>
-
-        <label>
-          Password
-          <input id="loginPassword" type="password" autocomplete="current-password"
-                 placeholder="Enter your password" minlength="4" required>
-        </label>
-
-        <div class="login-options">
-          <label class="remember-option">
-            <input id="rememberMe" type="checkbox" checked>
-            <span>Remember me</span>
-          </label>
-          <span>FRONTEND DEMO</span>
-        </div>
-
-        <button class="rpg-button login-button" type="submit">
-          ENTER AION <span>→</span>
+    <!-- ===================== APPLICATION (after demo sign-in) ===================== -->
+    <header class="site-header" id="appHeader" aria-hidden="true" inert>
+      <a class="brand" href="#/dashboard" aria-label="AION dashboard"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="1.1 2.6"/><path d="M16 .8l2 2.6-2 2.6-2-2.6z" fill="currentColor"/><circle cx="16" cy="16" r="2" fill="currentColor"/></svg><span>AION</span></a>
+      <div class="header-player">
+        <span class="hp-orb" id="headerOrb" aria-hidden="true">P</span>
+        <span id="headerName">PLAYER</span><b id="headerLevel">LV 1</b>
+        <span class="hp-xp" aria-hidden="true"><i id="headerXp"></i></span>
+      </div>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Toggle application navigation"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path
+            d="M4 7h16M4 12h16M4 17h16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+      <nav id="mainNav" aria-label="Application navigation">
+        <a href="#/dashboard" data-route="dashboard"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>Dashboard</a>
+        <a href="#/quests" data-route="quests"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></svg>Quests</a>
+        <a href="#/inventory" data-route="inventory"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12 4 7.5"/></svg>Inventory</a>
+        <a href="#/leaderboard" data-route="leaderboard"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 11 6-6 6 6"/><path d="m6 18 6-6 6 6"/></svg>Ranking</a>
+        <a href="#/profile" data-route="profile"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>Profile</a>
+        <a href="#/stats" data-route="stats"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-5 3 3 5-7"/></svg>Stats</a>
+        <a href="#/settings" data-route="settings"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h9M19 7h1M4 17h1M11 17h9"/><circle cx="16" cy="7" r="2.2"/><circle cx="8" cy="17" r="2.2"/></svg>Settings</a>
+        <button class="logout-button" id="logoutButton" type="button">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H5v16h4"/><path d="m16 8 4 4-4 4M20 12H9"/></svg>Log out
         </button>
-      </form>
+      </nav>
+    </header>
 
-      <div class="login-divider"><span>✦</span></div>
-      <small class="login-note">Your progress is saved locally in this browser.</small>
-    </div>
-
-    <div class="login-decoration login-decoration-left">✦</div>
-    <div class="login-decoration login-decoration-right">✦</div>
-  </section>
-
-  <div id="loadingScreen" class="loading-screen">
-    <div class="loading-ring"></div>
-    <div class="loading-title">AION</div>
-    <small>YOUR JOURNEY HAS NO END</small>
-  </div>
-
-  <div class="ambient ambient-purple"></div>
-  <div class="ambient ambient-gold"></div>
-  <div class="stars"></div>
-
-  <header class="site-header">
-    <a class="logo" href="#/dashboard"><span>✦</span>AION</a>
-    <button class="menu-toggle" id="menuToggle">☰</button>
-    <nav id="mainNav">
-      <a href="#/dashboard" data-route="dashboard">Dashboard</a>
-      <a href="#/quests" data-route="quests">Quests</a>
-      <a href="#/inventory" data-route="inventory">Inventory</a>
-      <a href="#/leaderboard" data-route="leaderboard">Ranking</a>
-      <a href="#/profile" data-route="profile">Profile</a>
-      <a href="#/stats" data-route="stats">Stats</a>
-      <a href="#/settings" data-route="settings">Settings</a>
-      <button class="logout-button" id="logoutButton" type="button">LOG OUT</button>
-    </nav>
-    <div class="header-player">
-      <span id="headerName">PLAYER</span>
-      <b id="headerLevel">LV 1</b>
-    </div>
-  </header>
-
-  <main id="app">
-    <!-- DASHBOARD -->
-    <section class="view dashboard-view" data-view="dashboard">
-      <div class="hero-copy">
-        <div class="rune-label">AION · GAMIFIED PRODUCTIVITY</div>
-        <h1>YOUR JOURNEY<br><span>HAS NO END.</span></h1>
-        <p>Turn everyday goals into quests. Earn XP. Level up. Build your legend.</p>
-        <div class="hero-actions">
-          <a href="#/quests" class="rpg-button">ENTER QUEST BOARD <span>→</span></a>
-          <button class="ghost-button" id="dailyRewardButton">✦ CLAIM DAILY DROP</button>
+    <main id="app" tabindex="-1" aria-hidden="true" inert>
+      <!-- DASHBOARD -->
+      <section
+        class="view dashboard-view"
+        data-view="dashboard"
+        aria-label="Dashboard"
+      >
+        <div class="deck">
+          <div class="deck-bg" aria-hidden="true"><img src="assets/images/portal.webp" alt="" width="800" height="800" decoding="async" /></div>
+          <div class="deck-main">
+            <div class="deck-copy">
+              <div class="deck-id">
+                <span class="avatar-orb" id="dashboardAvatar" aria-hidden="true">P</span>
+                <span>Welcome back &middot; Adventurer, level <b id="dashboardLevel">1</b></span>
+              </div>
+              <h1 id="dashboardPlayer">PLAYER</h1>
+              <div class="xp-block">
+                <div class="xp-head">
+                  <span>Experience</span>
+                  <b><i id="dashboardXp">0</i> / <span id="dashboardXpMax">1000</span> XP</b>
+                </div>
+                <div
+                  class="xp-bar"
+                  role="progressbar"
+                  aria-label="Progress to next level"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow="0"
+                  id="dashboardXpTrack"
+                >
+                  <i id="dashboardXpBar"></i>
+                </div>
+              </div>
+              <div class="hero-actions">
+                <a href="#/quests" class="btn btn-primary btn-lg">Open Quest Board</a>
+                <button class="btn btn-light btn-lg" id="dailyRewardButton" type="button">
+                  Claim Daily Drop
+                </button>
+              </div>
+            </div>
+            <div class="level-ring" aria-hidden="true">
+              <svg viewBox="0 0 240 240">
+                <circle class="ring-ticks-outer" cx="120" cy="120" r="114" pathLength="100" />
+                <circle class="ring-ticks-major" cx="120" cy="120" r="114" pathLength="100" />
+                <circle class="ring-track" cx="120" cy="120" r="98" />
+                <circle class="ring-orbit" cx="120" cy="120" r="82" />
+                <circle class="ring-fill" id="dashboardRing" cx="120" cy="120" r="98" pathLength="100" />
+              </svg>
+              <div class="ring-core"><small>Level</small><b id="dashboardLevelBig">1</b></div>
+            </div>
+          </div>
+          <div class="telemetry" aria-label="Player summary">
+            <div class="tele"><span>Total XP</span><b id="dashboardTotalXp">0</b></div>
+            <div class="tele"><span>Streak</span><b><i id="dashboardStreak">0</i><small> days</small></b></div>
+            <div class="tele"><span>Quests done</span><b id="dashboardQuestsDone">0</b></div>
+            <div class="tele"><span>Demo rank</span><b id="dashboardRank">#—</b></div>
+          </div>
         </div>
-      </div>
 
-      <div class="portal-visual">
-        <div class="portal-back"></div>
-        <img src="assets/images/image6.png" alt="AION purple portal">
-        <div class="portal-glow"></div>
-      </div>
+        <div class="dash-grid">
+          <article class="panel-open active-quests-panel">
+            <div class="panel-title">
+              <h2>Active quests</h2>
+              <a href="#/quests">View all</a>
+            </div>
+            <div id="dashboardQuestList"></div>
+          </article>
 
-      <div class="dashboard-panel-wrap">
-        <article class="rpg-panel player-panel">
-          <div class="panel-title"><span>PLAYER STATUS</span><small>SEASON 04</small></div>
-          <div class="player-line">
-            <div class="avatar-orb" id="dashboardAvatar">P</div>
-            <div><strong id="dashboardPlayer">PLAYER</strong><small>ADVENTURER · LEVEL <b id="dashboardLevel">1</b></small></div>
-            <div class="level-number"><span>LV</span><b id="dashboardLevelBig">1</b></div>
+          <div class="dash-side">
+            <article class="card panel">
+              <div class="panel-title"><h2>Board status</h2></div>
+              <div class="quest-stats">
+                <div><b id="qsActive">0</b><span>Active</span></div>
+                <div><b id="qsDone">0</b><span>Completed</span></div>
+                <div><b id="qsExpired">0</b><span>Expired</span></div>
+                <div><b id="qsTotal">0</b><span>Total</span></div>
+              </div>
+              <div
+                class="mini-progress"
+                role="progressbar"
+                aria-label="Quest completion"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                id="qsTrack"
+              >
+                <i id="qsBar"></i>
+              </div>
+              <small class="muted" id="qsText">0% of quests completed</small>
+              <small class="muted" id="qsTodayText">Today: 0 quests completed</small>
+            </article>
+
+            <aside class="card panel reward-panel">
+              <div class="panel-title">
+                <h2>Rewards</h2>
+                <a href="#/inventory">Inventory</a>
+              </div>
+              <div class="reward-line">
+                <span class="reward-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4zM18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8z"/></svg></span>
+                <div>
+                  <strong>Daily Drop</strong
+                  ><small id="dailyStatus">Available now</small>
+                </div>
+                <b class="pill pill-gold"
+                  ><span>+<span id="dailyXpValue">50</span> XP</span></b
+                >
+              </div>
+              <div class="reward-line">
+                <img
+                  id="dashboardRewardImg"
+                  src="assets/images/image38.png"
+                  alt=""
+                  width="40"
+                  height="40"
+                />
+                <div>
+                  <strong id="dashboardReward">Level 2</strong
+                  ><small id="dashboardRewardText">100 XP remaining</small>
+                </div>
+              </div>
+              <div class="mini-progress" aria-hidden="true">
+                <i id="dashboardRewardBar"></i>
+              </div>
+              <small class="muted" id="dashboardNextItem"></small>
+            </aside>
           </div>
-          <div class="xp-head"><span>EXPERIENCE</span><b><i id="dashboardXp">0</i> / 1000 XP</b></div>
-          <div class="xp-bar"><i id="dashboardXpBar"></i></div>
-          <div class="status-grid">
-            <div><span>STREAK</span><b id="dashboardStreak">0</b><small>DAYS</small></div>
-            <div><span>QUESTS</span><b id="dashboardQuestsDone">0</b><small>DONE</small></div>
-            <div><span>RANK</span><b id="dashboardRank">#—</b><small>SEASON</small></div>
+
+          <article class="panel-open activity-panel">
+            <div class="panel-title">
+              <h2>Recent activity</h2>
+              <a href="#/inventory">Full history</a>
+            </div>
+            <div id="dashboardActivity"></div>
+          </article>
+        </div>
+        <article class="card panel level-demo" aria-labelledby="levelDemoTitle">
+          <div class="panel-title">
+            <div><span class="mini-label">Optional · local only</span><h2 id="levelDemoTitle">Level theme preview</h2></div>
+            <button class="btn btn-light" id="toggleLevelDemo" type="button">Start demo mode</button>
+          </div>
+          <p class="muted">Preview progression colours and level-ups without changing your saved player progress.</p>
+          <div id="demoControls" class="level-demo-controls hidden">
+            <span id="demoIndicator" class="status status-active" hidden>DEMO PREVIEW</span>
+            <div class="demo-level-controls">
+              <label for="demoLevel">Preview level</label>
+              <button class="btn btn-light btn-sm" id="demoLevelDown" type="button" aria-label="Decrease preview level">−</button>
+              <input id="demoLevel" type="number" min="1" max="10000" value="1" inputmode="numeric" aria-label="Preview level">
+              <button class="btn btn-light btn-sm" id="demoLevelUp" type="button" aria-label="Increase preview level">+</button>
+            </div>
+            <div class="demo-xp-controls">
+              <label for="demoXpAmount">Simulated XP</label>
+              <input id="demoXpAmount" type="number" min="1" max="10000000" value="100" inputmode="numeric">
+              <button class="btn btn-light" id="addDemoXp" type="button">Add simulated XP</button>
+            </div>
+            <div id="demoPreview" class="level-demo-preview">
+              <div class="demo-preview-head"><strong>Level <span id="demoLevelValue">1</span></strong><span id="demoThemeName">Cyan</span><span class="demo-theme-swatch" aria-hidden="true"></span></div>
+              <div class="xp-head"><span>Experience</span><b><span id="demoXpValue">0</span> / <span id="demoXpRequired">100</span> XP</b></div>
+              <div class="xp-bar" role="progressbar" aria-label="Demo progress to next level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="demoXpTrack"><i id="demoXpBar"></i></div>
+              <small id="demoXpRemaining" class="muted">100 XP to the next level</small>
+            </div>
+            <div class="demo-apply-controls">
+              <button class="btn btn-primary" id="applyDemoToDashboard" type="button">Apply to Dashboard</button>
+              <small class="muted">Applying replaces your saved level progression, including lifetime XP.</small>
+            </div>
           </div>
         </article>
+      </section>
 
-        <article class="rpg-panel active-quests-panel">
-          <div class="panel-title"><span>ACTIVE QUESTS</span><a href="#/quests">VIEW ALL →</a></div>
-          <div id="dashboardQuestList"></div>
-        </article>
+      <!-- QUESTS -->
+      <section class="view quests-view" data-view="quests" aria-label="Quests">
+        <div class="page-banner">
+          <div>
+            <h2>Mission control</h2>
+            <p>Every completed mission becomes progress you can see.</p>
+          </div>
+          <button class="btn btn-primary" id="createQuestButton" type="button">
+            Create quest
+          </button>
+        </div>
+        <div class="quest-summary" id="questSummary"></div>
+        <div class="console">
+          <div class="quest-toolbar">
+            <div
+              id="questFilters"
+              class="filter-chips"
+              role="group"
+              aria-label="Quest categories"
+            ></div>
+            <input
+              id="questSearch"
+              type="search"
+              aria-label="Search quests"
+              placeholder="Search the quest board…"
+            />
+          </div>
+          <div class="quest-actions">
+            <label
+              >Difficulty<select id="questDifficulty">
+                <option value="All">All difficulties</option>
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+              </select></label
+            >
+            <label
+              >Priority<select id="questPriority">
+                <option value="All">All priorities</option>
+                <option>High</option>
+                <option>Normal</option>
+                <option>Low</option>
+              </select></label
+            >
+            <label
+              >Status<select id="questStatus">
+                <option value="All">All statuses</option>
+                <option value="Active">Active</option>
+                <option value="Completed">Completed</option>
+                <option value="Expired">Expired</option>
+              </select></label
+            >
+            <label
+              >Deadline<select id="questDeadline">
+                <option value="All">Any deadline</option>
+                <option value="Has deadline">Has deadline</option>
+                <option value="No deadline">No deadline</option>
+                <option value="Due this week">Due this week</option>
+              </select></label
+            >
+            <label
+              >Sort by<select id="questSort">
+                <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
+                <option value="due">Due date</option>
+                <option value="xp">Highest XP</option>
+                <option value="priority">Priority</option>
+                <option value="title">Title</option>
+              </select></label
+            >
+            <button class="btn btn-light" id="generateQuestButton" type="button">
+              Generate quests
+            </button>
+          </div>
+        </div>
+        <div class="section-heading">
+          <h3>Active quests</h3>
+          <span>Unfinished quests, including overdue quests</span>
+        </div>
+        <div id="questGrid" class="quest-grid"></div>
+        <div id="questEmpty" class="empty-panel hidden">
+          <strong>The board is silent.</strong
+          ><span
+            >No unfinished quests match your filters. Try clearing the search or choosing
+            another category.</span
+          >
+        </div>
+        <div class="section-heading">
+          <h3>Completed quests</h3>
+          <span><b id="completedQuestCount">0</b> completed</span>
+        </div>
+        <div id="completedQuestGrid" class="quest-grid"></div>
+        <div id="completedQuestEmpty" class="empty-panel hidden">
+          <strong>No completed quests yet.</strong>
+          <span>Finish an active quest and it will appear here.</span>
+        </div>
+      </section>
 
-        <aside class="rpg-panel reward-panel">
-          <span class="mini-label">NEXT REWARD</span>
-          <div class="reward-badge"><img src="assets/images/image38.png" alt=""></div>
-          <h3 id="dashboardReward">LEVEL 2</h3>
-          <p id="dashboardRewardText">280 XP remaining</p>
-          <div class="mini-progress"><i id="dashboardRewardBar"></i></div>
-        </aside>
-      </div>
-    </section>
+      <!-- INVENTORY -->
+      <section class="view" data-view="inventory" aria-label="Inventory">
+        <div class="page-banner">
+          <div>
+            <h2>Artifact vault</h2>
+            <p>Badges and collectibles earned along the journey.</p>
+          </div>
+        </div>
+        <div class="collection-stats">
+          <div class="tele">
+            <span>Badges</span><b id="inventoryBadges">0</b>
+          </div>
+          <div class="tele">
+            <span>Items</span><b id="inventoryItems">0</b>
+          </div>
+          <div class="tele">
+            <span>Collection</span><b id="inventoryPercent">0%</b>
+          </div>
+        </div>
+        <div class="section-heading">
+          <h3>Badges</h3>
+          <span>Achievements</span>
+        </div>
+        <div id="badgeGrid" class="collection-grid"></div>
+        <div class="section-heading">
+          <h3>Collectibles</h3>
+          <span>Rewards</span>
+        </div>
+        <div id="itemGrid" class="collection-grid"></div>
+        <div class="section-heading">
+          <h3>Reward history</h3>
+          <span>Recent local claims</span>
+        </div>
+        <div id="rewardHistory" class="reward-history"></div>
+      </section>
 
-    <!-- QUESTS -->
-    <section class="view quests-view" data-view="quests">
-      <div class="page-banner">
-        <div><span class="rune-label">QUEST BOARD · YOUR MISSIONS</span><h2>CHOOSE YOUR <span>QUEST.</span></h2><p>Every completed mission becomes real progress.</p></div>
-        <button class="rpg-button small" id="createQuestButton">+ CREATE QUEST</button>
-      </div>
-      <div class="quest-toolbar">
-        <div id="questFilters"></div>
-        <input id="questSearch" type="search" placeholder="Search the quest board...">
-      </div>
-      <div id="questGrid" class="quest-grid"></div>
-      <div id="questEmpty" class="empty-panel hidden"><strong>THE BOARD IS SILENT.</strong><span>No quests match your search.</span></div>
-    </section>
+      <!-- LEADERBOARD -->
+      <section class="view" data-view="leaderboard" aria-label="Ranking">
+        <div class="page-banner">
+          <div>
+            <h2>The ascent</h2>
+            <p>
+              Complete quests, earn XP, and see how you compare with the demo
+              rivals.
+            </p>
+          </div>
+        </div>
+        <div class="rank-layout">
+          <article class="leaderboard-panel">
+            <div class="panel-title">
+              <h2>Top adventurers</h2>
+              <small>Demo rivals · XP based</small>
+            </div>
+            <div id="leaderboardList"></div>
+          </article>
+          <aside class="card panel your-rank">
+            <span class="mini-label">Your position</span>
+            <strong id="yourRank">#—</strong>
+            <p id="rankText">Start completing quests to climb the ranking.</p>
+            <hr />
+            <span class="mini-label">Total XP</span>
+            <b id="rankXp">0 XP</b>
+          </aside>
+        </div>
+      </section>
 
-    <!-- INVENTORY -->
-    <section class="view" data-view="inventory">
-      <div class="page-banner">
-        <div><span class="rune-label">PLAYER COLLECTION</span><h2>YOUR <span>INVENTORY.</span></h2><p>Badges and collectibles earned along the journey.</p></div>
-      </div>
-      <div class="collection-stats">
-        <div><b id="inventoryBadges">0</b><span>BADGES</span></div>
-        <div><b id="inventoryItems">0</b><span>ITEMS</span></div>
-        <div><b id="inventoryPercent">0%</b><span>COLLECTION</span></div>
-      </div>
-      <div class="section-heading"><h3>BADGES</h3><span>ACHIEVEMENTS</span></div>
-      <div id="badgeGrid" class="collection-grid"></div>
-      <div class="section-heading"><h3>COLLECTIBLES</h3><span>REWARDS</span></div>
-      <div id="itemGrid" class="collection-grid"></div>
-    </section>
+      <!-- PROFILE -->
+      <section class="view dossier-view" data-view="profile" aria-label="Profile">
+        <div class="page-banner">
+          <div>
+            <h2>Adventurer dossier</h2>
+            <p>Your identity, progress and earned honours.</p>
+          </div>
+        </div>
+        <div class="dossier">
+          <aside class="card dossier-id">
+            <div class="portrait" aria-hidden="true">
+              <div class="profile-avatar" id="profileAvatar">P</div>
+            </div>
+            <h2 id="profileName">PLAYER</h2>
+            <p id="profileTitle">Adventurer · Level 1</p>
+            <div class="profile-xp">
+              <b>Level <span id="profileLevel">1</span></b>
+              <div class="xp-bar"><i id="profileXpBar"></i></div>
+              <small id="profileXpText">0 / 100 XP</small>
+            </div>
+          </aside>
+          <div class="dossier-main">
+            <article class="panel-open">
+              <span class="mini-label">About the hero</span>
+              <p id="profileBio">
+                Complete quests and build your own progression story.
+              </p>
+              <a class="text-link" href="#/settings">Edit profile</a>
+            </article>
+            <article class="panel-open">
+              <span class="mini-label">Player stats</span>
+              <div id="profileStats" class="profile-stats"></div>
+            </article>
+            <article class="panel-open">
+              <div class="panel-title">
+                <h2>Achievements</h2>
+                <small>Unlocked badges</small>
+              </div>
+              <div id="profileAchievements" class="achievement-row"></div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    <!-- LEADERBOARD -->
-    <section class="view" data-view="leaderboard">
-      <div class="page-banner">
-        <div><span class="rune-label">SEASON 04 · RANKED</span><h2>SEASON <span>RANKING.</span></h2><p>Complete quests. Earn XP. Rise through the realm.</p></div>
-      </div>
-      <div class="rank-layout">
-        <article class="rpg-panel leaderboard-panel">
-          <div class="panel-title"><span>TOP ADVENTURERS</span><small>XP BASED</small></div>
-          <div id="leaderboardList"></div>
-        </article>
-        <aside class="rpg-panel your-rank">
-          <span class="mini-label">YOUR POSITION</span>
-          <strong id="yourRank">#—</strong>
-          <p id="rankText">Start completing quests to climb the ranking.</p>
-          <hr>
-          <span class="mini-label">SEASON XP</span>
-          <b id="rankXp">0 XP</b>
-        </aside>
-      </div>
-    </section>
+      <!-- STATS -->
+      <section class="view" data-view="stats" aria-label="Stats">
+        <div class="page-banner">
+          <div>
+            <h2>Progression analytics</h2>
+            <p>See how your real-life progress is growing.</p>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <article class="card panel chart-panel">
+            <div class="panel-title">
+              <h2>XP history</h2>
+              <small id="chartNote">Last 7 quest completions</small>
+            </div>
+            <div class="chart-wrap">
+              <div class="chart-axis" id="chartAxis" aria-hidden="true"></div>
+              <div id="xpChart" class="xp-chart"></div>
+              <div id="chartEmpty" class="chart-empty hidden">Complete a quest to start your XP history.</div>
+            </div>
+          </article>
+          <article class="card panel stat-big rate-panel">
+            <span class="mini-label">Completion rate</span>
+            <div class="stat-circle"><b id="completionRate">0%</b></div>
+            <small id="completionNote">Quests completed</small>
+          </article>
+          <div class="readouts">
+            <div class="tele"><span>Best streak</span><b id="bestStreak">0</b><small>days</small></div>
+            <div class="tele"><span>Total XP</span><b id="totalXp">0</b><small>earned</small></div>
+            <div class="tele"><span>Quests completed</span><b id="statsDone">0</b><small id="statsAvg">&nbsp;</small></div>
+          </div>
+        </div>
+      </section>
 
-    <!-- PROFILE -->
-    <section class="view" data-view="profile">
-      <div class="profile-banner rpg-panel">
-        <div class="profile-avatar" id="profileAvatar">P</div>
-        <div><span class="rune-label">PLAYER PROFILE</span><h2 id="profileName">PLAYER</h2><p id="profileTitle">ADVENTURER · LEVEL 1</p></div>
-        <div class="profile-xp"><b>LEVEL <span id="profileLevel">1</span></b><div class="xp-bar"><i id="profileXpBar"></i></div><small id="profileXpText">0 / 1000 XP</small></div>
-      </div>
-      <div class="profile-grid">
-        <article class="rpg-panel"><span class="mini-label">ABOUT THE HERO</span><h3>THE JOURNEY BEGINS.</h3><p id="profileBio">Complete quests and build your own progression story.</p></article>
-        <article class="rpg-panel"><span class="mini-label">PLAYER STATS</span><div id="profileStats" class="profile-stats"></div></article>
-        <article class="rpg-panel profile-wide"><div class="panel-title"><span>ACHIEVEMENTS</span><small>RECENT UNLOCKS</small></div><div id="profileAchievements" class="achievement-row"></div></article>
-      </div>
-    </section>
+      <!-- SETTINGS -->
+      <section class="view" data-view="settings" aria-label="Settings">
+        <div class="page-banner">
+          <div>
+            <h2>System configuration</h2>
+            <p>Customize your local adventure.</p>
+          </div>
+        </div>
+        <div class="settings-grid">
+          <form
+            class="settings-form form"
+            id="settingsForm"
+            novalidate
+          >
+            <section class="cfg-group" aria-labelledby="cfgIdentity">
+              <h3 id="cfgIdentity">Identity</h3>
+              <div class="cfg-row">
+                <div class="cfg-text"><label for="settingsName">Display name</label><small>Shown on your dashboard, profile and the ranking.</small></div>
+                <input id="settingsName" minlength="2" maxlength="18" required />
+              </div>
+              <div class="cfg-row cfg-stack">
+                <div class="cfg-text"><label for="settingsBio">Player bio</label><small>Up to 120 characters.</small></div>
+                <textarea id="settingsBio" rows="4" maxlength="120"></textarea>
+              </div>
+            </section>
+            <section class="cfg-group" aria-labelledby="cfgInterface">
+              <h3 id="cfgInterface">Interface</h3>
+              <div class="cfg-row">
+                <div class="cfg-text"><label for="settingsTheme">Landing page accent preference</label><small>The dashboard palette follows your level; this preference remains available for the public landing page.</small></div>
+                <select id="settingsTheme">
+                  <option value="gold">Ion cyan (default)</option>
+                  <option value="sky">Ultraviolet</option>
+                </select>
+              </div>
+            </section>
+            <p id="settingsError" class="field-error" role="alert" hidden></p>
+            <div class="cfg-actions"><button class="btn btn-primary" type="submit">Save changes</button></div>
+          </form>
+          <article class="card panel danger-card">
+            <span class="mini-label">Local data</span>
+            <h3>Reset AION</h3>
+            <p>
+              Erase the progress saved in this browser. This cannot be undone.
+            </p>
+            <button class="btn btn-danger" id="resetButton" type="button">
+              Reset all progress
+            </button>
+          </article>
+        </div>
+      </section>
+    </main>
 
-    <!-- STATS -->
-    <section class="view" data-view="stats">
-      <div class="page-banner"><div><span class="rune-label">PROGRESSION ANALYTICS</span><h2>PLAYER <span>STATS.</span></h2><p>See how your real-life progress is growing.</p></div></div>
-      <div class="stats-grid">
-        <article class="rpg-panel chart-panel"><div class="panel-title"><span>XP HISTORY</span><small>LAST 7 DAYS</small></div><div id="xpChart" class="xp-chart"></div></article>
-        <article class="rpg-panel stat-big"><span class="mini-label">COMPLETION RATE</span><div class="stat-circle"><b id="completionRate">0%</b></div><small>QUESTS COMPLETED</small></article>
-        <article class="rpg-panel stat-big"><span class="mini-label">BEST STREAK</span><b id="bestStreak" class="number-gold">0</b><small>DAYS</small></article>
-        <article class="rpg-panel stat-big"><span class="mini-label">TOTAL XP</span><b id="totalXp" class="number-gold">0</b><small>EARNED</small></article>
+    <div id="modal" class="modal hidden" role="presentation">
+      <div class="modal-backdrop" data-close></div>
+      <div
+        class="modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        tabindex="-1"
+      >
+        <button
+          class="modal-close"
+          data-close
+          type="button"
+          aria-label="Close dialog"
+        >
+          ×
+        </button>
+        <div id="modalContent"></div>
       </div>
-    </section>
-
-    <!-- SETTINGS -->
-    <section class="view" data-view="settings">
-      <div class="page-banner"><div><span class="rune-label">SYSTEM CONFIGURATION</span><h2>AION <span>SETTINGS.</span></h2><p>Customize your local adventure.</p></div></div>
-      <div class="settings-grid">
-        <form class="rpg-panel settings-form" id="settingsForm">
-          <span class="mini-label">PLAYER SETTINGS</span>
-          <label>Display Name<input id="settingsName" minlength="2" maxlength="18" required></label>
-          <label>Player Bio<textarea id="settingsBio" rows="4" maxlength="120"></textarea></label>
-          <label>Theme<select id="settingsTheme"><option value="purple">Purple / Gold</option><option value="violet">Violet / Neon</option></select></label>
-          <button class="rpg-button" type="submit">SAVE CHANGES</button>
-        </form>
-        <article class="rpg-panel danger-card"><span class="mini-label">LOCAL DATA</span><h3>RESET AION</h3><p>Erase the progress saved in this browser.</p><button class="danger-button" id="resetButton">RESET ALL PROGRESS</button></article>
-      </div>
-    </section>
-  </main>
-
-  <div id="modal" class="modal hidden">
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-box"><button class="modal-close" data-close>×</button><div id="modalContent"></div></div>
-  </div>
-  <div id="toast" class="toast"></div>
-  <script type="module" src="js/app.js"></script>
-</body>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="js/app.js"></script>
+  </body>
 </html>
